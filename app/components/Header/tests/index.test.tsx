@@ -9,20 +9,20 @@ import Header from '../index';
 import configureStore from '../../../configureStore';
 
 describe('<Header />', () => {
-  const history = createMemoryHistory();
-  const store = configureStore({}, history);
+	const history = createMemoryHistory();
+	const store = configureStore({}, history);
 
-  it('should render a div', () => {
-    const { container } = render(
-      // tslint:disable-next-line: jsx-wrap-multiline
-      <Provider store={store}>
-        <IntlProvider locale="en">
-          <ConnectedRouter history={history}>
-            <Header />
-          </ConnectedRouter>
-        </IntlProvider>
-      </Provider>,
-    );
-    expect(container.firstChild).toMatchSnapshot();
-  });
+	it('should render a div', () => {
+		const { container } = render(
+			// tslint:disable-next-line: jsx-wrap-multiline
+			<Provider store={store}>
+				<IntlProvider locale="en">
+					<ConnectedRouter history={history}>
+						<Header />
+					</ConnectedRouter>
+				</IntlProvider>
+			</Provider>,
+		);
+		expect(container.firstChild).toMatchSnapshot();
+	});
 });

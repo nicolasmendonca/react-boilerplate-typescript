@@ -4,10 +4,10 @@ import ActionTypes from '../constants';
 import { action } from 'typesafe-actions';
 
 describe('LanguageProvider actions', () => {
-  describe('Change Local Action', () => {
-    it('has a type of CHANGE_LOCALE', () => {
-      const expected = action(ActionTypes.CHANGE_LOCALE, 'de');
-      expect(changeLocale('de')).toEqual(expected);
-    });
-  });
+	describe('Change Local Action', () => {
+		it('has a type of CHANGE_LOCALE', () => {
+			const expected = action(ActionTypes.CHANGE_LOCALE, 'de');
+			expect(changeLocale('de')).toEqual(expected);
+		});
+	});
 });

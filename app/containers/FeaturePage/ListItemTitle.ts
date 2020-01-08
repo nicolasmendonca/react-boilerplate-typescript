@@ -1,7 +1,7 @@
 import styled from 'styles/styled-components';
 
 const ListItemTitle = styled.p`
-  font-weight: bold;
+	font-weight: bold;
 `;
 
 export default ListItemTitle;

@@ -8,15 +8,15 @@ import { IntlProvider } from 'react-intl';
 import NotFound from '..';
 
 describe('<NotFound />', () => {
-  it('should render and match the snapshot', () => {
-    const {
-      container: { firstChild },
-    } = render(
-      // tslint:disable-next-line: jsx-wrap-multiline
-      <IntlProvider locale="en">
-        <NotFound />
-      </IntlProvider>,
-    );
-    expect(firstChild).toMatchSnapshot();
-  });
+	it('should render and match the snapshot', () => {
+		const {
+			container: { firstChild },
+		} = render(
+			// tslint:disable-next-line: jsx-wrap-multiline
+			<IntlProvider locale="en">
+				<NotFound />
+			</IntlProvider>,
+		);
+		expect(firstChild).toMatchSnapshot();
+	});
 });

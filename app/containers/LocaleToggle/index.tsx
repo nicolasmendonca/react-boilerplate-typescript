@@ -16,25 +16,25 @@ import { changeLocale } from '../LanguageProvider/actions';
 import { makeSelectLocale } from '../LanguageProvider/selectors';
 
 const stateSelector = createSelector(
-  makeSelectLocale(),
-  locale => ({
-    locale,
-  }),
+	makeSelectLocale(),
+	locale => ({
+		locale,
+	}),
 );
 
 export default function LocaleToggle() {
-  const { locale } = useSelector(stateSelector);
-  const dispatch = useDispatch();
+	const { locale } = useSelector(stateSelector);
+	const dispatch = useDispatch();
 
-  const onLocaleToggle = evt => dispatch(changeLocale(evt.target.value));
-  return (
-    <Wrapper>
-      <Toggle
-        value={locale}
-        values={appLocales}
-        messages={messages}
-        onToggle={onLocaleToggle}
-      />
-    </Wrapper>
-  );
+	const onLocaleToggle = evt => dispatch(changeLocale(evt.target.value));
+	return (
+		<Wrapper>
+			<Toggle
+				value={locale}
+				values={appLocales}
+				messages={messages}
+				onToggle={onLocaleToggle}
+			/>
+		</Wrapper>
+	);
 }

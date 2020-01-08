@@ -26,21 +26,21 @@ export const appLocales = [
 ];
 
 export const formatTranslationMessages = (locale, messages) => {
-  const defaultFormattedMessages =
-    locale !== DEFAULT_LOCALE
-      ? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
-      : {};
-  const flattenFormattedMessages = (formattedMessages, key) => {
-    const formattedMessage =
-      !messages[key] && locale !== DEFAULT_LOCALE
-        ? defaultFormattedMessages[key]
-        : messages[key];
-    return {...formattedMessages,  [key]: formattedMessage};
-  };
-  return Object.keys(messages).reduce(flattenFormattedMessages, {});
+	const defaultFormattedMessages =
+		locale !== DEFAULT_LOCALE
+			? formatTranslationMessages(DEFAULT_LOCALE, enTranslationMessages)
+			: {};
+	const flattenFormattedMessages = (formattedMessages, key) => {
+		const formattedMessage =
+			!messages[key] && locale !== DEFAULT_LOCALE
+				? defaultFormattedMessages[key]
+				: messages[key];
+		return { ...formattedMessages, [key]: formattedMessage };
+	};
+	return Object.keys(messages).reduce(flattenFormattedMessages, {});
 };
 
 export const translationMessages = {
-  en: formatTranslationMessages('en', enTranslationMessages),
-  de: formatTranslationMessages('de', deTranslationMessages),
+	en: formatTranslationMessages('en', enTranslationMessages),
+	de: formatTranslationMessages('de', deTranslationMessages),
 };

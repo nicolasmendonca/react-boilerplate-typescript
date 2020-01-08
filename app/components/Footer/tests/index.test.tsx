@@ -8,24 +8,24 @@ import configureStore from '../../../configureStore';
 import history from '../../../utils/history';
 
 describe('<Footer />', () => {
-  let store;
+	let store;
 
-  beforeAll(() => {
-    store = configureStore({}, history);
-  });
+	beforeAll(() => {
+		store = configureStore({}, history);
+	});
 
-  it('should render and match the snapshot', () => {
-    const renderedComponent = renderer
-      .create(
-        // tslint:disable-next-line: jsx-wrap-multiline
-        <Provider store={store}>
-          <IntlProvider locale="en">
-            <Footer />
-          </IntlProvider>
-        </Provider>,
-      )
-      .toJSON();
+	it('should render and match the snapshot', () => {
+		const renderedComponent = renderer
+			.create(
+				// tslint:disable-next-line: jsx-wrap-multiline
+				<Provider store={store}>
+					<IntlProvider locale="en">
+						<Footer />
+					</IntlProvider>
+				</Provider>,
+			)
+			.toJSON();
 
-    expect(renderedComponent).toMatchSnapshot();
-  });
+		expect(renderedComponent).toMatchSnapshot();
+	});
 });

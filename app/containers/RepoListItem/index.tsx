@@ -18,7 +18,7 @@ import Wrapper from './Wrapper';
 import { Repo } from './types';
 
 interface OwnProps {
-  item: Repo;
+	item: Repo;
 }
 
 // tslint:disable-next-line:no-empty-interface
@@ -26,32 +26,32 @@ interface DispatchProps {}
 
 type Props = DispatchProps & OwnProps;
 const stateSelector = createStructuredSelector({
-  currentUser: makeSelectCurrentUser(),
+	currentUser: makeSelectCurrentUser(),
 });
 
 export default function RepoListItem({ item }: Props) {
-  const { currentUser } = useSelector(stateSelector);
-  let nameprefix = '';
+	const { currentUser } = useSelector(stateSelector);
+	let nameprefix = '';
 
-  // If the repository is owned by a different person than we got the data for
-  // it's a fork and we should show the name of the owner
-  if (item.owner.login !== currentUser) {
-    nameprefix = `${item.owner.login}/`;
-  }
+	// If the repository is owned by a different person than we got the data for
+	// it's a fork and we should show the name of the owner
+	if (item.owner.login !== currentUser) {
+		nameprefix = `${item.owner.login}/`;
+	}
 
-  // Put together the content of the repository
-  const content = (
-    <Wrapper>
-      <RepoLink href={item.html_url} target="_blank">
-        {nameprefix + item.name}
-      </RepoLink>
-      <IssueLink href={`${item.html_url}/issues`} target="_blank">
-        <IssueIcon />
-        <FormattedNumber value={item.open_issues_count} />
-      </IssueLink>
-    </Wrapper>
-  );
+	// Put together the content of the repository
+	const content = (
+		<Wrapper>
+			<RepoLink href={item.html_url} target="_blank">
+				{nameprefix + item.name}
+			</RepoLink>
+			<IssueLink href={`${item.html_url}/issues`} target="_blank">
+				<IssueIcon />
+				<FormattedNumber value={item.open_issues_count} />
+			</IssueLink>
+		</Wrapper>
+	);
 
-  // Render the content into a list item
-  return <ListItem key={`repo-list-item-${item.full_name}`} item={content} />;
+	// Render the content into a list item
+	return <ListItem key={`repo-list-item-${item.full_name}`} item={content} />;
 }

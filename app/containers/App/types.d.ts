@@ -6,20 +6,18 @@ import { ApplicationRootState } from '../../types';
 /* --- STATE --- */
 
 interface AppState {
-  readonly loading: boolean;
-  readonly error?: object | boolean;
-  readonly currentUser: string;
-  readonly userData: UserData;
+	readonly loading: boolean;
+	readonly error?: object | boolean;
+	readonly currentUser: string;
+	readonly userData: UserData;
 }
 
 interface UserData {
-  readonly repos?: Repo[];
+	readonly repos?: Repo[];
 }
-
 
 /* --- ACTIONS --- */
 type AppActions = ActionType<typeof actions>;
-
 
 /* --- EXPORTS --- */
 

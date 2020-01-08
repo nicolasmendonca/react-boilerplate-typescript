@@ -5,12 +5,11 @@ import { ApplicationRootState } from 'types';
 /* --- STATE --- */
 
 interface HomeState {
-  readonly username: string;
+	readonly username: string;
 }
 
 /* --- ACTIONS --- */
 type AppActions = ActionType<typeof actions>;
-
 
 /* --- EXPORTS --- */
 

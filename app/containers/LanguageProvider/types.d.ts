@@ -5,12 +5,11 @@ import { ApplicationRootState } from 'types';
 /* --- STATE --- */
 
 interface LanguageProviderState {
-  readonly locale: string;
+	readonly locale: string;
 }
 
 /* --- ACTIONS --- */
 type AppActions = ActionType<typeof actions>;
-
 
 /* --- EXPORTS --- */
 
